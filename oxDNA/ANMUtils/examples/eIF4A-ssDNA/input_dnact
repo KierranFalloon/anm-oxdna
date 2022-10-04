@@ -1,0 +1,49 @@
+##############################
+####  PROGRAM PARAMETERS  ####
+###############################
+backend = CPU
+backend_precision = double
+interaction_type = DNACT
+salt_concentration = 1
+max_io = 4
+seed = 121
+############################## 
+####    SIM PARAMETERS    #### 
+############################## 
+### Universal Params ### 
+T = 300K 
+verlet_skin = 0.20 
+sim_type = MD 
+steps = 50e6
+
+### MD PARAMS ###
+thermostat = john
+dt = 0.0005
+maxclust = 63
+diff_coeff = 1
+newtonian_steps = 103
+refresh_vel = 1
+ 
+############################## 
+####     INTERACTIONS     #### 
+############################## 
+bending_k = 50.0 
+torsion_k = 50.0
+
+##############################
+####    INPUT / OUTPUT    ####
+##############################
+parfile = 2vso_chainA-ssDNA_relaxed-07.par
+topology = 2vso_chainA-ssDNA_relaxed-07.top
+conf_file = 2vso_chainA-ssDNA_relaxed-07.dat
+trajectory_file = trajectory.dat
+log_file = log.dat
+no_stdout_energy = 0
+restart_step_counter = 1
+energy_file = energy.dat
+print_conf_interval = 1000
+print_energy_every = 1000
+time_scale = linear
+external_forces = 1
+external_forces_file = trap.txt
+allow_broken_fene = true
